@@ -20,7 +20,7 @@ function SimController() {
 		numerator: 7,
 		denominator: 10,
 		firstQuestion: 0,
-		lastQuestion: 4,
+		lastQuestion: 0,
 	});
 	// expose model data to Smart Sparrow
 	pipit.CapiAdapter.expose('mastery', this.simModel);
