@@ -57,7 +57,7 @@ SimController.prototype.setupDisplay = function() {
 	// create a brand new fringe
 	this.simModel.fringe.randomFringe(getRandomInt(5, 9));
 	// choose a question randomly
-	var question = this.simModel.questionBank.chooseQuestion();
+	var question = this.simModel.questionBank.chooseQuestion(this.get('firstQuestion'), this.get('lastQuestion'));
 	// store the answer(s) to the question we chose in the last step
 	this.simModel.questionBank.setAnswers(this.simModel.fringe);
 	// draw the results for the last five questions

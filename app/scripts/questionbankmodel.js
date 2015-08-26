@@ -2,17 +2,13 @@
  * Stores the questions, answers and the answer history
  */
 
-function QuestionBankModel(_simModel, _numerator, _denominator, _firstQuestion, _lastQuestion) {
+function QuestionBankModel(_simModel, _numerator, _denominator) {
 	// save a link to the model
 	this.simModel = _simModel;
 	// the number of questions the student needs to answer right...
 	this.numerator = _numerator;
 	// out of this many of the most recent questions asked
 	this.denominator = _denominator;
-	// index of first question from question bank
-	this.firstQuestion = _firstQuestion;
-	// index of last question from question bank
-	this.lastQuestion = _lastQuestion;
 	// we need to keep track of the last <x> answers we've gotten
 	// so we can test for mastery. we use an array as a queue that
 	// stores as many answers as we're willing to consider
@@ -104,9 +100,9 @@ QuestionBankModel.prototype.createNewQuestions = function() {
 /*
  * choose a random template and useit to construct a new question string
  */
-QuestionBankModel.prototype.chooseQuestion = function() {
+QuestionBankModel.prototype.chooseQuestion = function(_firstQuestion, _lastQuestion) {
 	// choose a question index at random
-	this.questionIndex = getRandomInt(this.firstQuestion, this.lastQuestion + 1);
+	this.questionIndex = getRandomInt(_firstQuestion, _lastQuestion + 1);
 	// get the corresponding question template
 	var questionTemplate = this.questions[this.questionIndex];
 	// start with an empty question string

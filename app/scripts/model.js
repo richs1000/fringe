@@ -66,5 +66,5 @@ SimModel.prototype.initializeModel = function() {
 	// the question bank stores the questions, the answers and the student's
 	// answer history
 	this.questionBank = new QuestionBankModel(this, this.get('numerator'),
-				this.get('denominator'), this.get('firstQuestion'), this.get('lastQuestion'));
+				this.get('denominator'));
 }
