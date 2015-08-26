@@ -45,7 +45,7 @@ SimView.prototype.setupControls = function() {
 			$( "#txtFeedback" ).html("Right. The answer is " + studentAnswer);
 		} else {
 			// give them feedback
-			$( "#txtFeedback" ).html("That is incorrect. The correct answer is " + graphController.graphModel.answers[0]);
+			$( "#txtFeedback" ).html("That is incorrect. The correct answer is " + simController.simModel.questionBank.answers[0]);
 		}
 		// has mastery been demonstrated?
 		if (simController.simModel.questionBank.masteryAchieved()) {
