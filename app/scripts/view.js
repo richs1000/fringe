@@ -33,7 +33,7 @@ SimView.prototype.setupControls = function() {
 		// finish initializing the app
 		simController.initializeController();
 		// disable start button
-		$( "#btnSubmit" ).prop('disabled', true);
+		$( "#btnStart" ).prop('disabled', true);
 		// enable submit button
 		$( "#btnSubmit" ).prop('disabled', false);
 	});
