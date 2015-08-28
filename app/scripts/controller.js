@@ -41,6 +41,9 @@ function SimController() {
 	console.log('in SimController constructor - finished setting up display');
 	console.log('firstQuestion = ' + this.getModelValue('firstQuestion'));
 	console.log('lastQuestion = ' + this.getModelValue('lastQuestion'));
+	while (this.getModelValue('firstQuestion') != '1') {
+		console.log('Still waiting, firstQuestion = ' + this.getModelValue('firstQuestion'));
+	}
 }
 
 
