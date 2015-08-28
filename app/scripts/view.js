@@ -31,6 +31,9 @@ function SimView(_controller) {
 SimView.prototype.setupControls = function() {
 	// add event handler for submit button
 	$( "#btnSubmit" ).click(function() {
+		console.log('in btnSubmitClick');
+		console.log('firstQuestion = ' + simController.getModelValue('firstQuestion'));
+		console.log('lastQuestion = ' + simController.getModelValue('lastQuestion'));
 		// check the answer
 		var studentAnswer = $( "#txtAnswer" ).val();
 		// record whether it was right or wrong
