@@ -29,6 +29,9 @@ function SimView(_controller) {
 
 
 SimView.prototype.setupControls = function() {
+	$( "#btnSubmit" ).click(function() {
+		simController.initializeController();
+	});
 	// add event handler for submit button
 	$( "#btnSubmit" ).click(function() {
 		console.log('in btnSubmitClick');

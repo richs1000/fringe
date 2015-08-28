@@ -33,17 +33,17 @@ function SimController() {
 	console.log('in SimController constructor');
 	console.log('firstQuestion = ' + this.getModelValue('firstQuestion'));
 	console.log('lastQuestion = ' + this.getModelValue('lastQuestion'));
+}
+
+SimController.prototype.initializeController = function() {
 	// initialize the model
 	this.simModel.initializeModel();
 	// initialize the view
 	this.simView = new SimView(this);
 	this.setupDisplay();
-	console.log('in SimController constructor - finished setting up display');
+	console.log('in SimController initializeModel - finished setting up display');
 	console.log('firstQuestion = ' + this.getModelValue('firstQuestion'));
 	console.log('lastQuestion = ' + this.getModelValue('lastQuestion'));
-	while (this.getModelValue('firstQuestion') != '1') {
-		console.log('Still waiting, firstQuestion = ' + this.getModelValue('firstQuestion'));
-	}
 }
 
 
