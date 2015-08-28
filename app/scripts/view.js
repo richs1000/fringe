@@ -30,14 +30,15 @@ function SimView(_controller) {
 
 SimView.prototype.setupControls = function() {
 	$( "#btnStart" ).click(function() {
-		console.log("start button pressed");
+		// finish initializing the app
 		simController.initializeController();
+		// disable start button
+		$( "#btnSubmit" ).prop('disabled', true);
+		// enable submit button
+		$( "#btnSubmit" ).prop('disabled', false);
 	});
 	// add event handler for submit button
 	$( "#btnSubmit" ).click(function() {
-		console.log('in btnSubmitClick');
-		console.log('firstQuestion = ' + simController.getModelValue('firstQuestion'));
-		console.log('lastQuestion = ' + simController.getModelValue('lastQuestion'));
 		// check the answer
 		var studentAnswer = $( "#txtAnswer" ).val();
 		// record whether it was right or wrong

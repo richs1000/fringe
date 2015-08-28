@@ -30,23 +30,15 @@ function SimController() {
 	pipit.CapiAdapter.expose('lastQuestion', this.simModel);
 	// let smart sparrow know that the sim is ready to accept values
 	pipit.Controller.notifyOnReady();
-
+	// create the view controller
 	this.simView = new SimView(this);
-
-	console.log('in SimController constructor');
-	console.log('firstQuestion = ' + this.getModelValue('firstQuestion'));
-	console.log('lastQuestion = ' + this.getModelValue('lastQuestion'));
 }
 
 SimController.prototype.initializeController = function() {
-	console.log("initializing controller");
 	// initialize the model
 	this.simModel.initializeModel();
 	// initialize the view
 	this.setupDisplay();
-	console.log('in SimController initializeModel - finished setting up display');
-	console.log('firstQuestion = ' + this.getModelValue('firstQuestion'));
-	console.log('lastQuestion = ' + this.getModelValue('lastQuestion'));
 }
 
 
